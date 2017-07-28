@@ -12,11 +12,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
+    @IBOutlet weak var buyNowbtn: UIButton!
+    @IBOutlet weak var wholeView: UIView!
     
     let states = ["QLD", "NSW", "VIC", "NT", "WA", "Islanders", "Canberra"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         statePicker.dataSource = self
         statePicker.delegate = self
         
@@ -30,7 +33,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
    
     @IBAction func stateBtnPressed(sender: AnyObject) {
         
-        statePicker.accessibilityElementsHidden = false
+        statePicker.hidden = false
+        
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -48,8 +53,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], forState: UIControlState.Normal)
         
-        statePicker.accessibilityElementsHidden = true
+        statePicker.hidden = true
+        
     }
+    
+    @IBAction func buyNowbtnPressed(sender: AnyObject) {
+        wholeView.hidden = true
+        
+        
+        
+    
+    }
+    
     
 }
 

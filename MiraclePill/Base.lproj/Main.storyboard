@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -33,7 +34,7 @@
                                 <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUD 150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eF-TU-19J">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUD 150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eF-TU-19J" userLabel="PriceLabel">
                                 <rect key="frame" x="259" y="181" width="82" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="Jzt-TP-mjF"/>
@@ -64,7 +65,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KE-MP-bWA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KE-MP-bWA" userLabel="Address">
                                 <rect key="frame" x="40" y="289" width="520" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="9cB-sO-aVr"/>
@@ -92,16 +93,22 @@
                                 </constraints>
                                 <state key="normal" title="Choose your state"/>
                                 <connections>
-                                    <action selector="state:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUR-K9-6k3"/>
-                                    <action selector="stateBtnPreesed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czw-Wl-3wv"/>
+                                    <action selector="stateBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgd-R6-c9S"/>
                                 </connections>
                             </button>
-                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dq6-vk-OwA">
+                            <pickerView hidden="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Dq6-vk-OwA">
                                 <rect key="frame" x="164" y="401" width="273" height="127"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="273" id="8qd-lU-Qpg"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fej-fU-nvW">
+                                <rect key="frame" x="191" y="536" width="279" height="45"/>
+                                <state key="normal" title="Button" image="buyNowBtn"/>
+                                <connections>
+                                    <action selector="buyNowbtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3R-lA-1M2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -124,8 +131,10 @@
                             <constraint firstItem="pkn-7d-KnB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="aUl-p7-Wuw"/>
                             <constraint firstItem="UcP-IE-4Fy" firstAttribute="top" secondItem="xsq-ti-1wo" secondAttribute="bottom" constant="8" symbolic="YES" id="bdo-4T-Tcf"/>
                             <constraint firstItem="9KE-MP-bWA" firstAttribute="top" secondItem="UcP-IE-4Fy" secondAttribute="bottom" constant="43" id="gh5-GO-WB7"/>
+                            <constraint firstItem="Fej-fU-nvW" firstAttribute="centerX" secondItem="Dq6-vk-OwA" secondAttribute="centerX" constant="30" id="grC-d2-ro6"/>
                             <constraint firstItem="9KE-MP-bWA" firstAttribute="leading" secondItem="D2Z-OW-7HP" secondAttribute="leading" id="hEK-fs-CgR"/>
                             <constraint firstItem="UcP-IE-4Fy" firstAttribute="trailing" secondItem="oGZ-WG-GGs" secondAttribute="trailing" id="j3K-LH-GTY"/>
+                            <constraint firstItem="Fej-fU-nvW" firstAttribute="top" secondItem="Dq6-vk-OwA" secondAttribute="bottom" constant="8" symbolic="YES" id="jJL-HZ-tYC"/>
                             <constraint firstItem="D2Z-OW-7HP" firstAttribute="trailing" secondItem="Hsu-9v-W0r" secondAttribute="trailing" id="obf-Zr-5hr"/>
                             <constraint firstItem="9KE-MP-bWA" firstAttribute="top" secondItem="oGZ-WG-GGs" secondAttribute="bottom" constant="15" id="qID-RN-wIM"/>
                             <constraint firstItem="oGZ-WG-GGs" firstAttribute="trailing" secondItem="9KE-MP-bWA" secondAttribute="trailing" id="rbd-bh-TNK"/>
@@ -139,8 +148,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buyNowbtn" destination="Fej-fU-nvW" id="l1q-MA-7sJ"/>
                         <outlet property="statePicker" destination="Dq6-vk-OwA" id="hdn-Ua-yzB"/>
-                        <outlet property="statePickerBtn" destination="ZQE-fD-YWF" id="MZ4-lR-KxA"/>
+                        <outlet property="statePickerBtn" destination="ZQE-fD-YWF" id="HMx-rF-Fgq"/>
+                        <outlet property="wholeView" destination="8bC-Xf-vdC" id="G82-Bl-jyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,6 +160,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buyNowBtn" width="225" height="45"/>
         <image name="miraclePillEmoji" width="90" height="90"/>
     </resources>
 </document>
