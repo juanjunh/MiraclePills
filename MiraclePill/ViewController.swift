@@ -13,7 +13,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
     @IBOutlet weak var buyNowbtn: UIButton!
-    @IBOutlet weak var wholeView: UIView!
+    @IBOutlet weak var successBG: UIImageView!
+    @IBOutlet weak var successIndctr: UIImageView!
+  
     
     let states = ["QLD", "NSW", "VIC", "NT", "WA", "Islanders", "Canberra"]
     
@@ -58,11 +60,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func buyNowbtnPressed(sender: AnyObject) {
-        wholeView.hidden = true
+        successBG.hidden = false
+        successIndctr.hidden = false
         
-        
-        
-    
     }
     
     
