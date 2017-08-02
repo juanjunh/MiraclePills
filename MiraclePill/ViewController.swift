@@ -15,6 +15,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var buyNowbtn: UIButton!
     @IBOutlet weak var successBG: UIImageView!
     @IBOutlet weak var successIndctr: UIImageView!
+    @IBOutlet weak var mbNumberlabel: UILabel!
+    @IBOutlet weak var mbNumberspace: UITextField!
+    
+    
   
     
     let states = ["QLD", "NSW", "VIC", "NT", "WA", "Islanders", "Canberra"]
@@ -36,6 +40,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func stateBtnPressed(sender: AnyObject) {
         
         statePicker.hidden = false
+        mbNumberlabel.hidden = true
+        mbNumberspace.hidden = true
         
         
     }
@@ -56,6 +62,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         statePickerBtn.setTitle(states[row], forState: UIControlState.Normal)
         
         statePicker.hidden = true
+        mbNumberlabel.hidden = false
+        mbNumberspace.hidden = false
+
         
     }
     
